@@ -1,6 +1,7 @@
 from fastapi import Request, HTTPException
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from jwt_handler import decodeJWT
+
 #used to persist authentication
 class jwtBearer(HTTPBearer):
     def __init__(self, auto_Error : bool = True):

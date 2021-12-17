@@ -10,6 +10,7 @@ python-decouple = "==3.3"
 PyJWT = "==1.7.1"
 pydantic = {extras = ["email"], version = "*"}
 jwt = "*"
+motor = "==2.4.0"
 
 [dev-packages]
 

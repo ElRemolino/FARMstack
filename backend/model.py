@@ -1,4 +1,5 @@
 from pydantic import BaseModel, Field, EmailStr
+from typing import List
 
 class UserSchema(BaseModel):
   fullname : str = Field(default = None)
@@ -23,4 +24,10 @@ class UserLoginSchema(BaseModel):
           "password" : "123"
         }
     }
+
+class PokemonTeam(BaseModel):
+  team : list[int] = None
+
+
+
 

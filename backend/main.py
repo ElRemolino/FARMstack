@@ -1,12 +1,31 @@
 import fastapi
 import uvicorn
 from fastapi import FastAPI, Body
+from fastapi.middleware.cors import CORSMiddleware
 from model import UserSchema, UserLoginSchema
 from jwt_handler import signJWT
+from jwt_bearer import jwtBearer
+
+# from database import (
+#     add_pokemon,
+#     remove_pokemon,
+# )
+
+
 
 app = FastAPI()
 
+origins = [ "http://localhost:3000" ]
+
 users = []
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @app.get("/", tags=["test"])
@@ -34,3 +53,6 @@ def user_login(user: UserLoginSchema = Body(default = None)):
         return {
             "error": "Invalid login details!"
         }
+
+# Pokemon Team Routes
+
