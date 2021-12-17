@@ -14,7 +14,7 @@ def greet():
     return {'hello': 'world'}
 
 # User Signup
-@app.post("user/signup", tags=["user"])
+@app.post("/user/signup", tags=["user"])
 def user_signup(user: UserSchema = Body(default = None)):
     users.append(user)
     return signJWT(user.email)
@@ -24,3 +24,13 @@ def check_user(data: UserLoginSchema):
         if user.email == data.email and user.password == data.password:
             return True
         return False
+
+# User login
+@app.post("/user/login", tags=["user"])
+def user_login(user: UserLoginSchema = Body(default = None)):
+    if check_user(user):
+        return signJWT(user.email)
+    else:
+        return {
+            "error": "Invalid login details!"
+        }
