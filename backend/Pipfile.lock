@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "78d52d4ebf9d6bd01aac85d2d3bd31a544ffb0a89d686dbdf356b8ef248696a7"
+            "sha256": "b8473115e7c7ca1f736e9311c9b82abc16fb2868e493aa5025278be16aa1e741"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -91,6 +91,21 @@
             ],
             "markers": "python_full_version >= '3.6.1'",
             "version": "==1.8.2"
+        },
+        "pyjwt": {
+            "hashes": [
+                "sha256:5c6eca3c2940464d106b99ba83b00c6add741c9becaec087fb7ccdefea71350e",
+                "sha256:8d59a976fb773f3e6a39c85636357c4f0e242707394cadadd9814f5cbaa20e96"
+            ],
+            "index": "pypi",
+            "version": "==1.7.1"
+        },
+        "python-decouple": {
+            "hashes": [
+                "sha256:55c546b85b0c47a15a47a4312d451a437f7344a9be3e001660bccd93b637de95"
+            ],
+            "index": "pypi",
+            "version": "==3.3"
         },
         "sniffio": {
             "hashes": [
